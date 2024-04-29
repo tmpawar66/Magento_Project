@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="course_depttest" resource="default" engine="innodb" comment="course department table">
+        <column xsi:type="int" name="entity_id" padding="10"  nullable="false" identity="true" comment="ID" />
+        <column xsi:type="varchar" name="token" nullable="false" length="255" comment="Token"/>
+        <column xsi:type="varchar" name="stat" nullable="false" length="255" comment="status" onCreate="migrateDataFrom(status)" />
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+    </table>
+
+
+    <table name="custom_eav_attribute" resource="default" engine="innodb" comment="Custom EAV Attribute Table">
+        <column xsi:type="int" name="attribute_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Attribute ID"/>
+        <column xsi:type="varchar" name="attribute_code" nullable="false" length="255" comment="Attribute Code"/>
+        <column xsi:type="varchar" name="backend_type" nullable="false" length="50" comment="Backend Type"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="attribute_id"/>
+        </constraint>
+    </table>
+
+
+</schema>

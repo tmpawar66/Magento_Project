@@ -1,0 +1,33 @@
+{
+    "course_depttest": {
+        "column": {
+            "entity_id": true,
+            "token": true,
+            "status": true,
+            "stat": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "custom_eav_attribute": {
+        "column": {
+            "attribute_id": true,
+            "attribute_code": true,
+            "backend_type": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "test_tbl": {
+        "column": {
+            "id": true,
+            "col1": true,
+            "col2": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
