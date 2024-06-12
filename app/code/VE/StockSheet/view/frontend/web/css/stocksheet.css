@@ -1,0 +1,89 @@
+embed {
+    width:90%;
+  }
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    padding: 10px 10px;
+  }
+
+  @media print {
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 90%;
+      padding: 10px 10px;
+    }
+    body{width: fit-content;}
+  }
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 5px;
+  }
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  .main-div {
+    border: 1px solid black;
+  }
+  .header-logo {
+    margin: 15px 15px;
+  }
+  .wrapper {
+    display:flex;
+    width:100%;
+    align-items:start;
+  }
+  
+  .stock-prof {
+    border: 4px solid black;
+    height: 100px;
+    margin:10px 10px;
+    width:65%;
+    float:left;
+  }
+  .allQties {
+    margin: 10px 10px;
+    width: 25%;
+    float:right;              
+  }
+  .stock-prof p {
+   color: red;
+   font-size: small;
+   margin:10px 10px;
+   font-weight: bold;
+  }
+  .totalQty {
+    border: 1px solid black;
+    height: 30px;
+  }
+  .first{
+    float:left; 
+    margin:5px 5px; 
+    font-weight: bold;
+  }
+  .second{
+    float:right; 
+    margin:5px 5px; 
+    font-weight: bold;
+  }
+  .policy-content {
+    width:80%;
+    text-align:right;
+    font-weight: bold;
+    float:left;
+    padding:15px;
+    font-size:small;
+  }
+
+  .logo-custom {
+    padding: 15px;
+    width:20%;
+    float:right;
+    text-align:right;
+  }
+  .clearfix{
+    clear:both;
+  }

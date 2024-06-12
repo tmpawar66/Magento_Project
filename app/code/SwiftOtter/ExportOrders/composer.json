@@ -1,0 +1,12 @@
+{
+    "name": "SwiftOtter/module-exportorders",
+    "description": "module for order export",
+    "autoload": {
+        "files": [
+            "registration.ph"
+        ],
+        "psr-4": {
+            "SwiftOtter\\ExportOrders\\":""
+        }
+    }
+}

@@ -1,0 +1,16 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// phpcs:disable Magento2.Templates.ThisInTemplate
+
+/**  @var $block \VE\StockSheet\Block\Cart\AddGrid */
+
+$allItems =  $block->getItems();
+
+$buttonUrl = $block->getUrl().'vestocksheet/index?id='.$block->getQuoteId();
+if(count($allItems) > 0) {
+    echo "<a href=".$buttonUrl."><button type='button'>Get StockSheet</button></a>";
+}

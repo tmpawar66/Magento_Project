@@ -1,0 +1,95 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// phpcs:disable Magento2.Templates.ThisInTemplate
+
+/**  @var $block \VE\StockSheet\Block\index */
+$finalData = $block->getFinalData();
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel='stylesheet' href='<?php echo $block->getViewFileUrl("VE_StockSheet::css/stocksheet.css") ?>'/>
+  </head>
+  <body>
+    <div class ="main-div">      
+      <table>
+      <?php
+        $staticData=array(
+          0=>array("87S","92S","97S","102S","107S","112S","117S","122S","127S","132S","2T","3T","4T","5T","6T"),
+          1=>array("67R","72R","77R","82R","87R","92R","97R","102R","107R","112R","117R","122R","127R"),
+          2=>array("OS","4-8","9-13","N/A","XX/S","X/S","S/S","S/M","M/L","L/XL","6/7XL","8/9XL","10/11XL"),
+          3=>array("00-03","03-06","06-12","12-18","18-24",2,4,6,8,10,12,14,16,18,20),
+          4=>array(22,24,26,28,30,32,34,36,38,40,42,44,46,"ZERO","00"));
+          
+          // Header content
+          foreach($staticData as $hdata){
+            echo "<tr><th></th><th></th><th></th>";
+            foreach($hdata as $data){
+              echo "<th>".$data."</th>";
+            }
+            echo "</tr>";
+          }
+          
+          ?>
+        <tr>
+          <?php for ($i=0; $i < count($finalData['header']); $i++) {
+            echo "<th>".$finalData['header'][$i]."</th>";
+          } ?>
+        </tr>
+        <?php
+        foreach ($finalData['resultdata'] as $keyR => $valueR) {
+          $test['description'] = $keyR;
+          foreach ($valueR as $keyG => $valueG) {
+            $test['sex'] = $keyG;
+            foreach ($valueG as $keyC => $valueC) {
+              $test['color'] = $keyC;
+              foreach ($valueC as $key => $value) {
+                $test[$key] = $value;
+              }
+              $newArr = array_values($test);
+              echo" <tr>";
+              for ($i=0; $i < count($newArr); $i++) {
+                echo "<td>".$newArr[$i]."</td>";
+              }
+              echo "</tr>";
+            }
+          }
+        }
+      ?>
+      </table>
+      <footer>
+        <div class="wrapper">
+          <div class="stock-prof">
+            <p>Stock Proof - Please check and confirm you stock by return email to accounts@mabuzi.com</p>
+            <p>Client Sign and Date</p>
+          </div>
+          <div class="allQties">
+            <div class ="totalQty">
+              <span class ="first">Total Order Quantity</span>
+              <span  class ="second"><?= $finalData['total'] ?></span>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+
+        <div class="wrapper">
+          <div class="policy-content">
+            <p>Please check all garment details above, ESPECIALLY SIZES - if you are unsure about the specific shirt sizes - please ask.</p>
+            <p>Please request weblinks or samples if you are not sure as we cannot accept responsibility where the incorrect size is ordered.</p>
+            <p>This document forms part of your proof and must be signed and dated as this will be used for production purposes.</p>
+          </div>
+          <div class="logo-custom">
+            <img src="<?= $block->getLogoSrc() ?>">
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+
+

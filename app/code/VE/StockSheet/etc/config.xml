@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Edison Medical
+ *
+ * @category  Edison Medical
+ * @package   Dibay_Ritter
+ * @author    Edison Medical
+ * @copyright Copyright (c) Edison Medical
+ * @license   LICENSE.txt
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <vestocksheet>
+            <general>
+                <order>000397647</order>
+                </general>
+        </vestocksheet>
+    </default>                            
+</config>

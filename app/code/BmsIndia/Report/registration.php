@@ -4,5 +4,5 @@
 */
 
 use Magento\Framework\Component\ComponentRegistrar;
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Course_Src',__DIR__);
+ComponentRegistrar::register(ComponentRegistrar::MODULE, 'BmsIndia_Report',__DIR__);
 ?>

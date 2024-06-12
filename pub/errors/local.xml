@@ -17,7 +17,7 @@
             in "subject" you can set subject of email
         -->
         <subject>Store Debug Information</subject>
-        <!--
+        <!--    
             "email_address" admin email address
         -->
         <email_address></email_address>

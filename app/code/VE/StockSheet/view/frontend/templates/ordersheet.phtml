@@ -1,0 +1,76 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// phpcs:disable Magento2.Templates.ThisInTemplate
+
+/**  @var $block \VE\StockSheet\Block\index */
+$finalData = $block->getFinalData();
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel='stylesheet' href='<?php echo $block->getViewFileUrl("VE_StockSheet::css/stocksheet.css") ?>'/>
+  </head>
+  <body>
+    <div class ="main-div">      
+      <table><?php
+      foreach($finalData["resultdata"] as $fkey=>$fdata){
+        $c=strlen($fkey);
+        if($c<=1){
+          echo "<tr>";
+          foreach($fdata as $hdata){
+           echo "<th>".$hdata."</th>";
+          } 
+          echo "</tr>";
+        }
+        else{
+          
+          foreach($fdata as $rkey=>$rdata){
+            echo "<tr>";
+           foreach($rdata as $dt){
+            echo "<td>".$dt."</td>";
+           }
+           echo "</tr>";
+          } 
+          
+        }
+         
+
+      }
+      ?>
+      </table>
+      <footer>
+        <div class="wrapper">
+          <div class="stock-prof">
+            <p>Stock Proof - Please check and confirm you stock by return email to accounts@mabuzi.com</p>
+            <p>Client Sign and Date</p>
+          </div>
+          <div class="allQties">
+            <div class ="totalQty">
+              <span class ="first">Total Order Quantity</span>
+              <span  class ="second"><?= $finalData['total'] ?></span>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+
+        <div class="wrapper">
+          <div class="policy-content">
+            <p>Please check all garment details above, ESPECIALLY SIZES - if you are unsure about the specific shirt sizes - please ask.</p>
+            <p>Please request weblinks or samples if you are not sure as we cannot accept responsibility where the incorrect size is ordered.</p>
+            <p>This document forms part of your proof and must be signed and dated as this will be used for production purposes.</p>
+          </div>
+          <div class="logo-custom">
+            <img src="<?= $block->getLogoSrc() ?>">
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+
+

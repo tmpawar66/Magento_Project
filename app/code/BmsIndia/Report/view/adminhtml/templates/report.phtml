@@ -1,0 +1,66 @@
+
+<?php
+$attributeOptions = $block->getAttributeValues();
+?>
+<div class="admin__data-grid-wrap">
+    <table class="data-grid center" id="bms-india-report">
+        <h3 style="text-align: center!important;"><?php echo __('Sales Report Forecast'); ?></h3>
+        <thead>
+            <tr class="center">
+                <th scope="col"><?php echo __('Category'); ?></th>
+                <?php for ($i = 1; $i <= 12; $i++): ?>
+                    <th scope="col"><?php echo $block->getNextMonth($i); ?></th>
+                <?php endfor; ?>
+                <th scope="col"><?php echo __('Total Sales'); ?></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php 
+            $arr=$block->getHighestLowestValue();
+            foreach ($attributeOptions as $option): ?>
+            <?php if ($arr['highest']==$option['label']): ?>
+                <tr style="background-color: green;!important">
+                    <th scope="row"><?php echo $option['label']; ?></th>
+                    <?php for ($i = 1; $i <= 12; $i++): ?>
+                        <td><?php echo $block->getProductCount($i - 1, $option['value']); ?></td>
+                    <?php endfor; ?>
+                    <td><?php echo $block->getTotal($option['value']); ?></td>
+                </tr>
+
+                <?php elseif ($arr['lowest']==$option['label']): ?>
+                <tr style="background-color: red;!important">
+                    <th scope="row"><?php echo $option['label']; ?></th>
+                    <?php for ($i = 1; $i <= 12; $i++): ?>
+                        <td><?php echo $block->getProductCount($i - 1, $option['value']); ?></td>
+                    <?php endfor; ?>
+                    <td><?php echo $block->getTotal($option['value']); ?></td>
+                </tr>
+
+               <?php else: ?>
+                <tr>
+                    <th scope="row"><?php echo $option['label']; ?></th>
+                    <?php for ($i = 1; $i <= 12; $i++): ?>
+                        <td><?php echo $block->getProductCount($i - 1, $option['value']); ?></td>
+                    <?php endfor; ?>
+                    <td><?php echo $block->getTotal($option['value']); ?></td>
+                </tr>
+               <?php endif; ?>
+
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+ <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+
+        }
+        /* setting the text-align property to center*/
+        th,td,caption {
+            padding: 5px;
+            text-align: center !important;
+        }
+    </style>

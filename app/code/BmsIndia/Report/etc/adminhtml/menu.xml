@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!-- /**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: DOng NGuyen<nguyen@dvn.com>
+ * @@Create Date: 2016-02-23 18:59:34
+ * @@Modify Date: 2016-04-22 17:17:18
+ * @@Function:
+ */ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+    	<update id="bmsindiaupd" title="BMS India" module="BmsIndia_Report" sortOrder="10" resource="BmsIndia_Report::bms"/>
+
+	        <add id="BmsIndia_Report::bmsreport" title="BMS India" module="BmsIndia_Report" sortOrder="10" parent="bmsindiaupd" resource="BmsIndia_Report::bmsreport"/>
+
+				<add id="BmsIndia_Report::report" title="Report" module="BmsIndia_Report" sortOrder="10" parent="BmsIndia_Report::bmsreport" action="bms/report/index" resource="BmsIndia_Report::rpt"/>
+    </menu>
+</config>

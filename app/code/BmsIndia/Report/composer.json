@@ -1,5 +1,5 @@
 {
-	"name":"Course/module-src",
+	"name":"BmsIndia/module-report",
 	"description":"Magento2 extension that gives a static sales report of last year",
 	"type":"magento2-module",
 	"require":{
@@ -10,7 +10,7 @@
 			"registration.php"
 		],
 		"psr-4":{
-			"Course\\Src\\":""
+			"BmsIndia\\Report\\":""
 		}
 	}
 }

@@ -19,5 +19,13 @@
         </constraint>
     </table>
 
+    <table name="test_tbl" engine="innodb" resource="default" comment="test table">
+        <column xsi:type="int" name="emp_id" padding="10" unsigned="true" nullable="false" identity="true" comment="id column" />
+        <column xsi:type="varchar" name="emp_name" length="255" padding="10" unsigned="true" nullable="true"  comment="emp column" />
+        <column xsi:type="varchar" name="dept" length="255" padding="10" unsigned="true" nullable="true"  comment="dept column" />
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="emp_id" />
+        </constraint>
+    </table>
 
 </schema>
